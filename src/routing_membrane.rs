@@ -119,7 +119,7 @@ impl RoutingMembrane {
         let ports_and_protocols : Vec<PortAndProtocol> = Vec::new();
         // TODO: Beacon port should be passed down
         let beacon_port = Some(5483u16);
-        let listeners = match cm.start_listening(ports_and_protocols, beacon_port) {
+        let listeners = match cm.start_listening2(ports_and_protocols, beacon_port) {
             Err(reason) => {
                 println!("Failed to start listening: {:?}", reason);
                 (vec![], None)
